@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS Children's Villages - Tech Landing</title>
+    <style>
+        /* --- CSS STYLES START --- */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: lowercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #2b5bc7;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn-outline {
+            border: 2px solid #333;
+            padding: 6px 18px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .btn-filled {
+            background-color: #2b5bc7;
+            color: white;
+            padding: 8px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            padding: 60px 8%;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .hero-content p {
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 450px;
+        }
+
+        .btn-main {
+            background-color: #2b5bc7;
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(43, 91, 199, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            padding: 40px 8%;
+            gap: 60px;
+            background: #fcfcfc;
+        }
+
+        .feature-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: #222;
+        }
+
+        .feature-card img {
+            height: 50px;
+            object-fit: contain;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #00264d;
+            color: white;
+            padding: 60px 8% 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand img {
+            height: 35px;
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-brand p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+
+        .app-status {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            text-transform: lowercase;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: #adb5bd;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            line-height: 2.2;
+            font-size: 1rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .programs-tag {
+            display: block;
+            text-align: right;
+            font-size: 0.9rem;
+            margin-top: 25px;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 15px; }
+            .hero { text-align: center; }
+            .hero-content p { margin: 0 auto 30px; }
+            .footer-container { grid-template-columns: 1fr; }
+        }
+
+        /* --- CSS STYLES END --- */
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://via.placeholder.com/180x50/2b5bc7/ffffff?text=SOS+VILLAGES" alt="SOS Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">home</a></li>
+                <li><a href="#">administration</a></li>
+                <li><a href="#">about us</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#" class="btn-outline">APPLY NOW</a>
+                <a href="#" class="btn-filled">register</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Build your future with technical excellence</h1>
+                <p>Gain world-class skills in modern technology and prepare for a successful career in the digital era.</p>
+                <button class="btn-main">START APPLICATION NOW</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800" alt="Students in Lab">
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="ICT">
+                <span>ict systems</span>
+            </div>
+            <div class="feature-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" alt="Devs">
+                <span>developers technology</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="https://via.placeholder.com/180x50/ffffff/00264d?text=SOS+VILLAGES" alt="Footer Logo">
+                <p>empowering youth through skills</p>
+                <h3 class="app-status">Application Status</h3>
+            </div>
+
+            <div class="footer-links">
+                <h4>quick links</h4>
+                <ul>
+                    <li><a href="#">apply</a></li>
+                    <li><a href="#">careers</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">tenders</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>contact info</h4>
+                <p>kacyiru gasabo, kigali</p>
+                <p>+378 421 980 512</p>
+                <span class="programs-tag">programs</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
