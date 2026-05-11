@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <style>
+        :root {
+            --primary-blue: #008cff;
+            --bg-gray: #f4f7f6;
+            --text-dark: #333;
+            --sidebar-width: 260px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-gray);
+            margin: 0;
+            display: flex;
+            color: var(--text-dark);
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: white;
+            height: 100vh;
+            padding: 30px 20px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+
+        .menu-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            margin: 20px 0 10px;
+        }
+
+        .nav-item {
+            padding: 12px 15px;
+            margin: 4px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            color: #555;
+            transition: 0.3s;
+        }
+
+        .nav-item.active {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        .apply-btn {
+            margin-top: auto;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex-grow: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .search-bar {
+            background: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            width: 250px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #ddd; /* Replace with image URL */
+            object-fit: cover;
+        }
+
+        .student-info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            font-size: 13px;
+        }
+
+        .stat-badges {
+            display: flex;
+            gap: 15px;
+        }
+
+        .badge {
+            flex: 1;
+            padding: 15px;
+            border-radius: 12px;
+            background: #f0f0f0;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        /* Bottom Grid */
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .attendance-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .month-stat {
+            padding: 8px 15px;
+            border-radius: 8px;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .jan { background: #008cff; }
+        .feb { background: #ff9f43; }
+        .mar { background: #28c76f; }
+
+        .chart-placeholder {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(transparent, #eef6ff);
+            border-bottom: 2px solid var(--primary-blue);
+            margin-top: 10px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+        }
+        
+        .bar { width: 20px; background: var(--primary-blue); border-radius: 4px 4px 0 0; }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="logo">SOS CHILDREN'S VILLAGES INTERNATIONAL</div>
+        
+        <div class="menu-label">Main Menu</div>
+        <div class="nav-item">Dashboard</div>
+        <div class="nav-item">Analytics</div>
+        <div class="nav-item active">Time Management</div>
+        <div class="nav-item">Student</div>
+        <div class="nav-item">Approval</div>
+
+        <div class="menu-label">Settings</div>
+        <div class="nav-item">Settings</div>
+        <div class="nav-item">Help & Support</div>
+        <div class="nav-item">Log out</div>
+
+        <button class="apply-btn">Apply Now →</button>
+    </div>
+
+    <main class="main-content">
+        <header>
+            <h2 style="color: var(--primary-blue);">WELCOME BACK! Ilann,</h2>
+            <input type="text" class="search-bar" placeholder="Search Framework...">
+        </header>
+
+        <section class="profile-card">
+            <div class="profile-header">
+                <img src="https://via.placeholder.com/80" alt="Profile" class="avatar">
+                <div>
+                    <h3 style="margin: 0;">MUGISHA ILANN</h3>
+                    <p style="color: #888; font-size: 14px;">Student Details</p>
+                </div>
+            </div>
+
+            <div class="student-info-grid">
+                <div><strong>Id</strong><br>2026-0034</div>
+                <div><strong>Number</strong><br>0788017837</div>
+                <div><strong>Email</strong><br>mugisha@gmail.com</div>
+                <div><strong>Address</strong><br>Kigali</div>
+            </div>
+
+            <div class="stat-badges">
+                <div class="badge"><strong>15 Days</strong><br>Total Attendance</div>
+                <div class="badge" style="border-left: 4px solid #28c76f;"><strong>7 Days</strong><br>Late Attendance</div>
+                <div class="badge" style="border-left: 4px solid #ea5455;"><strong>1 Day</strong><br>Undertime Attendance</div>
+            </div>
+        </section>
+
+        <div class="bottom-grid">
+            <div class="card">
+                <h3>Class Days</h3>
+                <p style="font-size: 24px; font-weight: bold; margin: 5px 0;">23 Days</p>
+                <span style="color: #888; font-size: 12px;">Class days per month</span>
+            </div>
+
+            <div class="card">
+                <div style="display: flex; justify-content: space-between;">
+                    <h3>Attendance Rate</h3>
+                    <span style="font-size: 24px; font-weight: bold; color: var(--primary-blue);">56%</span>
+                </div>
+                <div class="attendance-row">
+                    <div class="month-stat jan">January 57%</div>
+                    <div class="month-stat feb">February 55%</div>
+                    <div class="month-stat mar">March 64%</div>
+                </div>
+                <div class="chart-placeholder">
+                    <div class="bar" style="height: 40%;"></div>
+                    <div class="bar" style="height: 60%;"></div>
+                    <div class="bar" style="height: 55%;"></div>
+                    <div class="bar" style="height: 80%;"></div>
+                    <div class="bar" style="height: 95%;"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
